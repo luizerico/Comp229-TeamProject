@@ -20,5 +20,10 @@ namespace Comp229_TeamProject
             FormsAuthentication.SignOut();
             FormsAuthentication.RedirectToLoginPage();
         }
+
+        protected void ReturnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Default.aspx", true);
+        }
     }
 }

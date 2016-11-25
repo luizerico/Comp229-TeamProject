@@ -50,7 +50,7 @@ namespace Comp229_TeamProject
             try
             {
                 conn.Open();
-                comm = new SqlCommand("Select pwd from users where uname=@userName", conn);
+                comm = new SqlCommand("Select Password from users where Username=@userName", conn);
                 comm.Parameters.Add("@userName", SqlDbType.VarChar, 25).Value = username;
                 System.Diagnostics.Trace.WriteLine("[ValidateUser] Error checking the database. " + comm.CommandText.ToString());
                 comm.ExecuteNonQuery();

@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h3>Logon Page</h3>
     <table>
         <tr>
@@ -31,6 +31,6 @@
             <td></td>
         </tr>
     </table>
-    <input type="submit" value="Logon" runat="server" id="cmdLogin" onClick="cmdLogin_ServerClick" /><p></p>
-    <asp:Label ID="Message" ForeColor="red" runat="server"  Text="00" /><asp:Button ID="Button1" runat="server" Text="Button" onClick="cmdLogin_ServerClick"/>
+    <asp:Button ID="Button1" runat="server" Text="Button" onClick="cmdLogin_ServerClick"/><p></p>
+    <asp:Label ID="Message" ForeColor="red" runat="server"  />
 </asp:Content>
