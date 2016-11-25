@@ -104,10 +104,11 @@
     <Content Include="Library.Master" />
     <Content Include="Login.aspx" />
     <Content Include="Home.aspx" />
-    <Content Include="User.aspx" />
-    <Content Include="Media.aspx" />
+    <Content Include="Member\User.aspx" />
+    <Content Include="Member\Media.aspx" />
     <Content Include="Aboutus.aspx" />
     <Content Include="Admin\Admin.Master" />
+    <Content Include="Logout.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -116,7 +117,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Setup\TextFile1.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\Admin.Master.cs">
@@ -162,18 +166,18 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User.aspx.cs">
+    <Compile Include="Member\User.aspx.cs">
       <DependentUpon>User.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User.aspx.designer.cs">
+    <Compile Include="Member\User.aspx.designer.cs">
       <DependentUpon>User.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Media.aspx.cs">
+    <Compile Include="Member\Media.aspx.cs">
       <DependentUpon>Media.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Media.aspx.designer.cs">
+    <Compile Include="Member\Media.aspx.designer.cs">
       <DependentUpon>Media.aspx</DependentUpon>
     </Compile>
     <Compile Include="Aboutus.aspx.cs">
@@ -182,6 +186,13 @@
     </Compile>
     <Compile Include="Aboutus.aspx.designer.cs">
       <DependentUpon>Aboutus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
