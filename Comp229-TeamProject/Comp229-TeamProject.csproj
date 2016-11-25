@@ -118,6 +118,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Setup\CreateDatabase.sql" />
+    <Content Include="Setup\CreateTables.sql" />
+    <Content Include="Setup\CreateTable_v2.sql" />
     <Content Include="Setup\TextFile1.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
