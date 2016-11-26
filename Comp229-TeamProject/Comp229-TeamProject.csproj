@@ -119,6 +119,7 @@
     <Content Include="Resources\Vendors\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Resources\Vendors\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Resources\Vendors\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Setup\COMP229-TeamProject.docx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
