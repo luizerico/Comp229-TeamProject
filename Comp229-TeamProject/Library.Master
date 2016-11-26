@@ -53,6 +53,14 @@
                             <LoggedInTemplate>
                                 <li id="home" runat="server"><a href="/Default.aspx"><i class="fa fa-home fa-lg"></i>Home</a></li>
                                 <li id="survey" runat="server"><a href="/Member/Media.aspx"><i class="fa fa-th fa-lg"></i>Medias</a></li>
+                                <li id="admin" runat="server" role="presentation" class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administration<span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li id="Users" runat="server"><a href="/Admin/UserAdmin.aspx"><i class="fa fa-th fa-lg"></i>Users</a></li>
+                                        <li id="Medias" runat="server"><a href="/Admin/MediaAdmin.aspx"><i class="fa fa-th fa-lg"></i>Medias</a></li>
+                                    </ul>
+                                </li>
                                 <li id="user_view" runat="server" role="presentation" class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><asp:LoginName ID="LoginName2" runat="server" Style="text-transform: capitalize;" /> <span class="caret"></span>
                                     </a>

@@ -3,7 +3,7 @@
     Author: Luiz Érico and Rister   
     Date: 11-21-2016
 --%>
-<%@ Page Title="" Language="C#" MasterPageFile="~/Library.Master" AutoEventWireup="true" CodeBehind="UserAdmin.aspx.cs" Inherits="Comp229_TeamProject.Admin.WebForm1" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Library.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Comp229_TeamProject.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -21,5 +21,7 @@
             <asp:BoundField DataField="Picture" HeaderText="Picture" SortExpression="Picture"></asp:BoundField>
             <asp:BoundField DataField="Registered_date" HeaderText="Registered_date" SortExpression="Registered_date"></asp:BoundField>
         </Columns>
+        
     </asp:GridView>
 </asp:Content>
+

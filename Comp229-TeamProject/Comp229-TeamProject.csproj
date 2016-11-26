@@ -107,10 +107,9 @@
     <Content Include="Library.Master" />
     <Content Include="Login.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="Member\User.aspx" />
+    <Content Include="Member\Profile.aspx" />
     <Content Include="Member\Media.aspx" />
     <Content Include="Aboutus.aspx" />
-    <Content Include="Admin\Admin.Master" />
     <Content Include="Logout.aspx" />
     <Content Include="Resources\Vendors\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="Resources\Vendors\bootstrap\css\bootstrap-theme.min.css.map" />
@@ -147,13 +146,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\Admin.Master.cs">
-      <DependentUpon>Admin.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Admin.Master.designer.cs">
-      <DependentUpon>Admin.Master</DependentUpon>
-    </Compile>
     <Compile Include="Admin\UserAdmin.aspx.cs">
       <DependentUpon>UserAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -190,12 +182,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Member\User.aspx.cs">
-      <DependentUpon>User.aspx</DependentUpon>
+    <Compile Include="Member\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Member\User.aspx.designer.cs">
-      <DependentUpon>User.aspx</DependentUpon>
+    <Compile Include="Member\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Member\Media.aspx.cs">
       <DependentUpon>Media.aspx</DependentUpon>

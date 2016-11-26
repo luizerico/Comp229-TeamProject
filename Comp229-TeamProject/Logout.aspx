@@ -1,4 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Library.Master" AutoEventWireup="true" CodeBehind="Logout.aspx.cs" Inherits="Comp229_TeamProject.WebForm6" %>
+﻿<%--
+    File: Login.aspx
+    Author: Luiz Érico and Rister   
+    Date: 11-21-2016
+--%>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Library.Master" AutoEventWireup="true" CodeBehind="Logout.aspx.cs" Inherits="Comp229_TeamProject.WebForm6" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

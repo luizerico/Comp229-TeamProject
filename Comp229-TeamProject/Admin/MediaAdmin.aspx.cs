@@ -5,6 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+/*
+ * <author>Luiz Erico and Rister</author>
+ * <date> 11-23-2016 </date>
+ * <summary>Login Page</summary>
+ */
 namespace Comp229_TeamProject.Admin
 {
     public partial class WebForm2 : System.Web.UI.Page

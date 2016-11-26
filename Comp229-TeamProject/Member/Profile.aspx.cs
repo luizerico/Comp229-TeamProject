@@ -5,9 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Comp229_TeamProject.Admin
+/*
+ * <author>Luiz Erico and Rister</author>
+ * <date> 11-23-2016 </date>
+ * <summary>Login Page</summary>
+ */
+namespace Comp229_TeamProject
 {
-    public partial class Site1 : System.Web.UI.MasterPage
+    public partial class WebForm3 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
