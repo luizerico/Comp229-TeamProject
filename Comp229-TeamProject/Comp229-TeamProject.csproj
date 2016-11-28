@@ -97,6 +97,7 @@
     <Content Include="Admin\UserAdmin.aspx" />
     <Content Include="Admin\MediaAdmin.aspx" />
     <Content Include="Resources\Css\library.css" />
+    <Content Include="Resources\Images\big_logo.png" />
     <Content Include="Resources\Images\favicon.ico" />
     <Content Include="Resources\Images\librarylogo.jpg" />
     <Content Include="Resources\Images\logo.jpg" />
@@ -111,6 +112,7 @@
     <Content Include="Member\Media.aspx" />
     <Content Include="Aboutus.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="Resources\Images\logo.png" />
     <Content Include="Resources\Vendors\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="Resources\Vendors\bootstrap\css\bootstrap-theme.min.css.map" />
     <Content Include="Resources\Vendors\bootstrap\css\bootstrap.css.map" />
