@@ -10,7 +10,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="text-align:center;  ">
-        <h3>Logon Page</h3>
+        <h3>Login Page</h3>
+        <h4>Azure Integration Test</h4>
     <table>
         <tr>
             <td>Username:</td>
