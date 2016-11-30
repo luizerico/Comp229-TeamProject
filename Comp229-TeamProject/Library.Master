@@ -19,10 +19,8 @@
 <body>
     <form id="form1" runat="server">
 
-        <!-- Main Navigation -->
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
@@ -35,8 +33,6 @@
                     </a>
                     <a class="navbar-brand" href="/Default.aspx"><i class="fa fa-fort-awesome fa-lg"></i>Library WebApp</a>
                 </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
 
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -84,8 +80,8 @@
         </main>
     </form>
     <nav class="navbar navbar-default navbar-floating-bottom">
-        <div class="container">
-            <h4>&copy; 2016 - TeamProject - All Rights Reserved</h4>
+        <div style="text-align:center">
+            <h5>&copy; 2016 - TeamProject - All Rights Reserved</h5>
         </div>
     </nav>
 

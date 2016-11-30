@@ -13,6 +13,24 @@ namespace Comp229_TeamProject {
     public partial class WebForm2 {
         
         /// <summary>
+        /// LastItems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource LastItems;
+        
+        /// <summary>
+        /// FeaturedItems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource FeaturedItems;
+        
+        /// <summary>
         /// LoginView1 control.
         /// </summary>
         /// <remarks>
@@ -20,5 +38,23 @@ namespace Comp229_TeamProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LoginView LoginView1;
+        
+        /// <summary>
+        /// FeaturedItemsList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater FeaturedItemsList;
+        
+        /// <summary>
+        /// LastItemsList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater LastItemsList;
     }
 }

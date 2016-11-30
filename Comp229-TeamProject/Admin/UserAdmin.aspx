@@ -22,4 +22,18 @@
             <asp:BoundField DataField="Registered_date" HeaderText="Registered_date" SortExpression="Registered_date"></asp:BoundField>
         </Columns>
     </asp:GridView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </asp:Content>
