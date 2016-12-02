@@ -1,7 +1,7 @@
 ﻿<%--
     File: Login.aspx
-    Author: Luiz Érico and SiteLi
-    Date: 11-28-2016
+    Author: Luiz Érico and Rister   
+    Date: 11-21-2016
 --%>
 
 <%@ Page Title="" Language="C#" MasterPageFile="~/Library.Master" AutoEventWireup="true" CodeBehind="MediaAdmin.aspx.cs" Inherits="Comp229_TeamProject.Admin.WebForm2" %>
