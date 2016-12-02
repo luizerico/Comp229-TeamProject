@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -24,6 +27,11 @@ namespace Comp229_TeamProject.Admin
             MediaEditDataSource.SelectParameters["Id"].DefaultValue = MediaGridView.SelectedValue.ToString();
             MediaFormView.DataBind();
             MediaGridView.Visible = false;
+
+            // Populate the DropDownList
+            //getStatus((DropDownList)MediaFormView.FindControl("DropDownListStatus"));
+            //ErrorLabel.Text = ((DropDownList)MediaFormView.FindControl("DropDownListStatus")).Items.ToString();
+
         }
 
         protected void MediaFormView_ItemInserted(object sender, FormViewInsertedEventArgs e)
@@ -48,6 +56,7 @@ namespace Comp229_TeamProject.Admin
         protected void NewItem_Command(object sender, CommandEventArgs e)
         {
             MediaFormView.ChangeMode(FormViewMode.Insert);
+            // getStatus((DropDownList)MediaFormView.FindControl("DropDownListStatus"));
             MediaGridView.Visible = false;
         }
 
@@ -55,6 +64,23 @@ namespace Comp229_TeamProject.Admin
         {
             MediaGridView.Visible = true;
             MediaEditDataSource.SelectParameters["Id"].DefaultValue = "-1";
+        }
+
+        protected void getStatus(DropDownList myDropDown, String sqlCommand, String idField, String nameField)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnTeamProject"].ConnectionString);
+            SqlCommand comm = new SqlCommand(sqlCommand, conn);
+            SqlDataReader reader;
+            try
+            {
+                conn.Open();
+                reader = comm.ExecuteReader();
+                myDropDown.DataSource = reader;
+                myDropDown.DataValueField = idField;
+                myDropDown.DataTextField = nameField;
+                myDropDown.DataBind();
+                //ErrorLabel.Text = reader.FieldCount.ToString() + "   " + myDropDown.Items.Count.ToString();
+
         }
     }
 }

@@ -7,14 +7,88 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <meta name="description" content="College Admin System. Centennial College" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link type="text/css" rel="stylesheet" href="/Resources/Vendors/bootstrap/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="/Resources/Css/library.css" />
+    <link rel="icon" href="/Resources/Images/favicon.ico" />
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/Default.aspx">
+                            <img src="/Resources/Images/logo.png" style="margin-top: -10px;" />
+                    </a>
+                    <a class="navbar-brand" href="/Default.aspx"><i class="fa fa-fort-awesome fa-lg"></i>Library WebApp</a>
+                </div>
+
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <%-- Todo: Implementar codigo para gerar menu baseado nas roles. --%>
+                        <asp:LoginView ID="AnonymousView" runat="server">
+                            <AnonymousTemplate>
+                                <li id="login" runat="server">
+                                    <asp:HyperLink ID="LoginPage" runat="server" NavigateUrl="~/Login.aspx">Anonymous User - Login</asp:HyperLink>
+                                </li>
+                            </AnonymousTemplate>
+                        </asp:LoginView>
+                        <asp:LoginView ID="LoginView" runat="server">
+                            <LoggedInTemplate>
+                                <li id="home" runat="server"><a href="/Default.aspx"><i class="fa fa-home fa-lg"></i>Home</a></li>
+                                <li id="survey" runat="server"><a href="/Member/Media.aspx"><i class="fa fa-th fa-lg"></i>Medias</a></li>
+                                <li id="admin" runat="server" role="presentation" class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administration<span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li id="Users" runat="server"><a href="/Admin/UserAdmin.aspx"><i class="fa fa-th fa-lg"></i>Users</a></li>
+                                        <li id="Medias" runat="server"><a href="/Admin/MediaAdmin.aspx"><i class="fa fa-th fa-lg"></i>Medias</a></li>
+                                    </ul>
+                                </li>
+                                <li id="user_view" runat="server" role="presentation" class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><asp:LoginName ID="LoginName2" runat="server" Style="text-transform: capitalize;" /> <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li id="profile" runat="server"><a href="/Member/Profile.aspx"><i class="fa fa-th fa-lg"></i>My Profile</a></li>
+                                        <li id="login_view" runat="server"><asp:LoginStatus ID="LoginStatus1" runat="server" /></li>
+                                    </ul>
+                                </li>
+
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                    </ul>
+                </div>
+
+
+            </div>
+        </nav>
+        <main>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
     </form>
+    <nav class="navbar navbar-default navbar-floating-bottom">
+        <div style="text-align:center">
+            <h5>&copy; 2016 - TeamProject - All Rights Reserved</h5>
+        </div>
+    </nav>
+
+    <!-- Scripts Section -->
+    <script src="/Resources/Vendors/jquery/jquery-3.1.1.min.js"></script>
+    <script src="/Resources/Vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Resources/Scripts/library.js"></script>
 </body>
 </html>
+

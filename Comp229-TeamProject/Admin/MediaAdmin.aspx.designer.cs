@@ -13,6 +13,42 @@ namespace Comp229_TeamProject.Admin {
     public partial class WebForm2 {
         
         /// <summary>
+        /// ErrorLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ErrorLabel;
+        
+        /// <summary>
+        /// ComboDataSourceStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ComboDataSourceStatus;
+        
+        /// <summary>
+        /// ComboDataSourceType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ComboDataSourceType;
+        
+        /// <summary>
+        /// ComboDataSourceUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ComboDataSourceUser;
+        
+        /// <summary>
         /// MediaListDataSource control.
         /// </summary>
         /// <remarks>

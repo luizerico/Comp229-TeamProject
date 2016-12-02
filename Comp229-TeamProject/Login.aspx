@@ -1,9 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Library.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Comp229_TeamProject.WebForm1"  %>
+﻿<%--
+    File: Login.aspx
+    Author: Luiz Érico and Rister   
+    Date: 11-21-2016
+--%>
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/Library.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Comp229_TeamProject.WebForm1"  %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h3>Logon Page</h3>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div style="text-align:center;  ">
+        <h3>Login Page</h3>
+        <h4>Azure Integration Test</h4>
     <table>
         <tr>
             <td>Username:</td>
@@ -31,6 +39,7 @@
             <td></td>
         </tr>
     </table>
-    <input type="submit" value="Logon" runat="server" id="cmdLogin" onClick="cmdLogin_ServerClick" /><p></p>
-    <asp:Label ID="Message" ForeColor="red" runat="server"  Text="00" /><asp:Button ID="Button1" runat="server" Text="Button" onClick="cmdLogin_ServerClick"/>
+    <asp:Button ID="Button1" runat="server" Text=" Login " onClick="cmdLogin_ServerClick" CssClass="btn btn-primary"/><p></p>
+    <asp:Label ID="Message" ForeColor="red" runat="server"  />
+        </div>
 </asp:Content>

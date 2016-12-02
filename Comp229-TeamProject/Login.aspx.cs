@@ -9,6 +9,11 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+/*
+ * <author>Luiz Erico and Rister</author>
+ * <date> 11-23-2016 </date>
+ * <summary>Login Page</summary>
+ */
 namespace Comp229_TeamProject
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -18,6 +23,11 @@ namespace Comp229_TeamProject
 
         }
 
+        /// <summary>
+        /// Capture the button click and send the username and password
+        /// to be checked. Return the user to the login page if login fail.
+        /// Redirect to the page requested or default.aspx page if login successful.
+        /// </summary>
         protected void cmdLogin_ServerClick(object sender, EventArgs e)
         {
             if (ValidateUser(UserName.Value, UserPass.Value))
@@ -26,6 +36,12 @@ namespace Comp229_TeamProject
                 Response.Redirect("~/Login.aspx", true);
         }
 
+        /// <summary>
+        /// Check if the user and password informed are present in the database
+        /// and return true in case positive or false if negative.
+        /// </summary>
+        /// <param name="username">username</param>
+        /// <param name="password">password</param>
         private bool ValidateUser(string username, string password)
         {
             SqlConnection conn;
@@ -46,11 +62,12 @@ namespace Comp229_TeamProject
                 return false;
             }
 
-
+            // connect to the database and return the password to be compared with the
+            // value passed to the function.
             try
             {
                 conn.Open();
-                comm = new SqlCommand("Select pwd from users where uname=@userName", conn);
+                comm = new SqlCommand("Select Password from users where Username=@userName", conn);
                 comm.Parameters.Add("@userName", SqlDbType.VarChar, 25).Value = username;
                 System.Diagnostics.Trace.WriteLine("[ValidateUser] Error checking the database. " + comm.CommandText.ToString());
                 comm.ExecuteNonQuery();
