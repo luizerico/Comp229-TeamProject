@@ -122,12 +122,9 @@
     <Content Include="Resources\Vendors\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Resources\Vendors\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Setup\COMP229-TeamProject.docx" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Scripts\library.js" />
@@ -144,9 +141,6 @@
     <Content Include="Setup\CreateTables.sql" />
     <Content Include="Setup\CreateTable_v2.sql" />
     <Content Include="Setup\TextFile1.txt" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\UserAdmin.aspx.cs">
@@ -214,7 +208,14 @@
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

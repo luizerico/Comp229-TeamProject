@@ -13,66 +13,84 @@ namespace Comp229_TeamProject.Admin {
     public partial class WebForm2 {
         
         /// <summary>
-        /// MediaList control.
+        /// ErrorLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource MediaList;
+        protected global::System.Web.UI.WebControls.Literal ErrorLabel;
         
         /// <summary>
-        /// GridView1 control.
+        /// ComboDataSourceStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.SqlDataSource ComboDataSourceStatus;
         
         /// <summary>
-        /// FormView1 control.
+        /// ComboDataSourceType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView1;
+        protected global::System.Web.UI.WebControls.SqlDataSource ComboDataSourceType;
         
         /// <summary>
-        /// label4 control.
+        /// ComboDataSourceUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label4;
+        protected global::System.Web.UI.WebControls.SqlDataSource ComboDataSourceUser;
         
         /// <summary>
-        /// text_studentid control.
+        /// MediaListDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox text_studentid;
+        protected global::System.Web.UI.WebControls.SqlDataSource MediaListDataSource;
         
         /// <summary>
-        /// InsertButton control.
+        /// MediaEditDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton InsertButton;
+        protected global::System.Web.UI.WebControls.SqlDataSource MediaEditDataSource;
         
         /// <summary>
-        /// InsertCancelButton control.
+        /// MediaGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton InsertCancelButton;
+        protected global::System.Web.UI.WebControls.GridView MediaGridView;
+        
+        /// <summary>
+        /// MediaFormView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FormView MediaFormView;
+        
+        /// <summary>
+        /// NewItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton NewItem;
     }
 }

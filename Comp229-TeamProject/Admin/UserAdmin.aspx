@@ -23,17 +23,17 @@
         </Columns>
     </asp:GridView>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString='<%$ ConnectionStrings:ConnTeamProject2 %>' SelectCommand="SELECT * FROM [Users]"></asp:SqlDataSource>
+    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource2">
+        <Columns>
+            <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" InsertVisible="False" SortExpression="Id"></asp:BoundField>
+            <asp:BoundField DataField="Username" HeaderText="Username" SortExpression="Username"></asp:BoundField>
+            <asp:BoundField DataField="Password" HeaderText="Password" SortExpression="Password"></asp:BoundField>
+            <asp:BoundField DataField="userRole" HeaderText="userRole" SortExpression="userRole"></asp:BoundField>
+            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email"></asp:BoundField>
+            <asp:BoundField DataField="Birthdate" HeaderText="Birthdate" SortExpression="Birthdate"></asp:BoundField>
+            <asp:BoundField DataField="Picture" HeaderText="Picture" SortExpression="Picture"></asp:BoundField>
+            <asp:BoundField DataField="Registered_date" HeaderText="Registered_date" SortExpression="Registered_date"></asp:BoundField>
+        </Columns>
+    </asp:GridView>
 </asp:Content>
