@@ -59,8 +59,6 @@
 
 
 
-
-
     <asp:LoginView ID="LoginView1" runat="server">
         <AnonymousTemplate>
             You are not logged in. Click on the login link to sign in.<br />
