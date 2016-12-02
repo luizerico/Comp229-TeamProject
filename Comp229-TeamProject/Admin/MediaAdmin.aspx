@@ -32,6 +32,7 @@
             <asp:Parameter Name="registered_by" Type="Int32"></asp:Parameter>
             <asp:Parameter DbType="Date" Name="updated_date"></asp:Parameter>
             <asp:Parameter Name="updated_by" Type="Int32"></asp:Parameter>
+
         </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="name" Type="String"></asp:Parameter>
@@ -107,6 +108,7 @@
             <asp:LinkButton runat="server" Text="Update" CommandName="Update" ID="UpdateButton" CausesValidation="True" />&nbsp;
             <asp:LinkButton runat="server" Text="Cancel" CommandName="Cancel" ID="UpdateCancelButton" OnClick="UpdateCancelButton_Click" CausesValidation="False" />
         </EditItemTemplate>
+
         <InsertItemTemplate>
             <div class="row list">
                 <asp:Label ID="Item_Name" runat="server" Text="Name:" CssClass="col-md-4 control-label" />
@@ -180,7 +182,7 @@
             <asp:LinkButton runat="server" Text="Cancel" CommandName="Cancel" ID="UpdateCancelButton" OnClick="UpdateCancelButton_Click" CausesValidation="False" />
         </ItemTemplate>
     </asp:FormView>
-    <asp:LinkButton runat="server" Text="New"  ID="NewItem" OnCommand="NewItem_Command" />
+    <asp:LinkButton runat="server" Text="New Item"  ID="NewItem" OnCommand="NewItem_Command" />
                       
     
     
