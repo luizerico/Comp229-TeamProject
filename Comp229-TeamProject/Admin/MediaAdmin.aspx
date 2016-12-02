@@ -14,9 +14,29 @@
 
     <asp:SqlDataSource ID="ComboDataSourceStatus" runat="server" ConnectionString='<%$ ConnectionStrings:ConnTeamProject %>' SelectCommand="SELECT * FROM [Status]"></asp:SqlDataSource>
     <asp:SqlDataSource ID="ComboDataSourceType" runat="server" ConnectionString='<%$ ConnectionStrings:ConnTeamProject %>' SelectCommand="SELECT * FROM [Type]"></asp:SqlDataSource>
-    <asp:SqlDataSource ID="ComboDataSourceUser" runat="server" ConnectionString='<%$ ConnectionStrings:ConnTeamProject %>' SelectCommand="SELECT * FROM [User]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="ComboDataSourceUser" runat="server" ConnectionString='<%$ ConnectionStrings:ConnTeamProject %>' SelectCommand="SELECT [Id], [Username] FROM [Users]"></asp:SqlDataSource>
     
-    <asp:SqlDataSource ID="MediaListDataSource" runat="server" ConnectionString='<%$ ConnectionStrings:ConnTeamProject %>' SelectCommand="SELECT * FROM [Item]">
+    <asp:SqlDataSource ID="MediaListDataSource" runat="server" ConnectionString='<%$ ConnectionStrings:ConnTeamProject %>' 
+        SelectCommand="SELECT [IT].[Id]
+                              ,[IT].[name]
+                              ,[TY].[type]
+                              ,[IT].[description]
+                              ,[ST].[status]
+                              ,[IT].[completed]
+                              ,[IT].[cover_image]
+                              ,[IT].[publisher]
+                              ,[IT].[release_date]
+                              ,[IT].[info_url]
+                              ,[IT].[quantity]
+                              ,[USR].[Username] as registered
+                              ,[IT].[registered_by]
+                              ,[USU].[Username] as updated
+                              ,[IT].[updated_by]
+                        FROM [Item] AS IT
+                        JOIN [Type] AS TY ON [TY].[Id] = [IT].[Type] 
+                        JOIN [Status] AS ST ON [ST].[Id] = [IT].[Status]
+                        JOIN [Users] AS USr ON [USR].[Id] = [IT].[registered_by]
+                        JOIN [Users] AS USU ON [USU].[Id] = [IT].[updated_by];">
     </asp:SqlDataSource>
     
     <asp:SqlDataSource ID="MediaEditDataSource" runat="server" ConnectionString='<%$ ConnectionStrings:ConnTeamProject %>' SelectCommand="SELECT * FROM [Item] WHERE [Id] = @Id" DeleteCommand="DELETE FROM [Item] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Item] ([name], [type], [description], [status], [completed], [cover_image], [publisher], [release_date], [info_url], [quantity], [registered_date], [registered_by], [updated_date], [updated_by]) VALUES (@name, @type, @description, @status, @completed, @cover_image, @publisher, @release_date, @info_url, @quantity, @registered_date, @registered_by, @updated_date, @updated_by)" UpdateCommand="UPDATE [Item] SET [name] = @name, [type] = @type, [description] = @description, [status] = @status, [completed] = @completed, [cover_image] = @cover_image, [publisher] = @publisher, [release_date] = @release_date, [info_url] = @info_url, [quantity] = @quantity, [registered_date] = @registered_date, [registered_by] = @registered_by, [updated_date] = @updated_date, [updated_by] = @updated_by WHERE [Id] = @Id">
@@ -60,6 +80,7 @@
             <asp:Parameter Name="Id" Type="Int32" DefaultValue="0" />
         </SelectParameters>
     </asp:SqlDataSource>
+
     <asp:GridView ID="MediaGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="MediaListDataSource" AllowPaging="True" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" InsertVisible="False" SortExpression="Id"></asp:BoundField>
@@ -71,7 +92,8 @@
             <asp:BoundField DataField="completed" HeaderText="completed" SortExpression="completed"></asp:BoundField>
             <asp:BoundField DataField="cover_image" HeaderText="cover_image" SortExpression="cover_image"></asp:BoundField>
             <asp:BoundField DataField="publisher" HeaderText="publisher" SortExpression="publisher"></asp:BoundField>
-            <asp:CommandField ShowSelectButton="True"></asp:CommandField>
+            <asp:BoundField DataField="updated" HeaderText="updated" SortExpression="updated"></asp:BoundField>
+            <asp:CommandField ShowSelectButton="True" ButtonType="Image"></asp:CommandField>
             
         </Columns>
     </asp:GridView>
@@ -86,14 +108,11 @@
             <br />
             type:<asp:DropDownList ID="typeTextBox" runat="server" DataValueField='id' DataSourceID="ComboDataSourceType" 
                 DataTextField="type" SelectedValue='<%# Bind("type") %>' />
-            <%-- <asp:TextBox Text='<%# Bind("type") %>' runat="server" ID="typeTextBox" /> --%>
             <br />
             description:<asp:TextBox Text='<%# Bind("description") %>' runat="server" ID="descriptionTextBox" />
             <br />
             status:<asp:DropDownList ID="statusTextBox" runat="server" DataValueField='id' DataSourceID="ComboDataSourceStatus" 
                 DataTextField="status" SelectedValue='<%# Bind("status") %>' />
-            <asp:DropDownList ID="statusTextBox1" runat="server" OnPreRender="DropDownListStatus_Load" ></asp:DropDownList> 
-            <%-- <asp:TextBox Text='<%# Bind("status") %>' runat="server" ID="statusTextBox" />--%>
             <br />
             completed:<asp:TextBox Text='<%# Bind("completed") %>' runat="server" ID="completedTextBox" />
             <br />
@@ -101,19 +120,21 @@
             <br />
             publisher:<asp:TextBox Text='<%# Bind("publisher") %>' runat="server" ID="publisherTextBox" />
             <br />
-            release_date:<asp:TextBox Text='<%# Bind("release_date") %>' runat="server" ID="release_dateTextBox" />
+            release_date:<asp:TextBox TextMode="Date" Text='<%# Bind("release_date", "{0:yyyy-MM-dd}") %>' runat="server" ID="release_dateTextBox" />
             <br />
             info_url:<asp:TextBox Text='<%# Bind("info_url") %>' runat="server" ID="info_urlTextBox" />
             <br />
             quantity:<asp:TextBox Text='<%# Bind("quantity") %>' runat="server" ID="quantityTextBox" />
             <br />
-            registered_date:<asp:TextBox Text='<%# Bind("registered_date") %>' runat="server" ID="registered_dateTextBox" />
+            registered_date:<asp:TextBox TextMode="Date" Text='<%# Bind("registered_date", "{0:yyyy-MM-dd}") %>' runat="server" ID="registered_dateTextBox" />
             <br />
-            registered_by:<asp:TextBox Text='<%# Bind("registered_by") %>' runat="server" ID="registered_byTextBox" />
+            registered_by:<asp:DropDownList ID="DropDownListRegistered" runat="server" DataValueField='Id' DataSourceID="ComboDataSourceUser" 
+                DataTextField="Username" SelectedValue='<%# Bind("registered_by") %>' />
             <br />
-            updated_date:<asp:TextBox Text='<%# Bind("updated_date") %>' runat="server" ID="updated_dateTextBox" />
+            updated_date:<asp:TextBox TextMode="Date" Text='<%# Bind("updated_date", "{0:yyyy-MM-dd}") %>' runat="server" ID="updated_dateTextBox" />
             <br />
-            updated_by:<asp:TextBox Text='<%# Bind("updated_by") %>' runat="server" ID="updated_byTextBox" />
+            updated_by:<asp:DropDownList ID="DropDownListUpdated" runat="server" DataValueField='Id' DataSourceID="ComboDataSourceUser" 
+                DataTextField="Username" SelectedValue='<%# Bind("updated_by") %>' />          
             <br />
             <asp:LinkButton runat="server" Text="Update" CommandName="Update" ID="UpdateButton" CausesValidation="True" />&nbsp;
             <asp:LinkButton runat="server" Text="Cancel" CommandName="Cancel" ID="UpdateCancelButton" OnClick="UpdateCancelButton_Click" CausesValidation="False" />
@@ -125,17 +146,13 @@
                     <asp:TextBox Text='<%# Bind("name") %>' runat="server" ID="nameTextBox" />
                 </div>
             </div>
-
-            type:<asp:TextBox Text='<%# Bind("type") %>' runat="server" ID="typeTextBox" />
+            type:<asp:DropDownList ID="DropDownList1" runat="server" DataValueField='id' DataSourceID="ComboDataSourceType" 
+                DataTextField="type" SelectedValue='<%# Bind("type") %>' />
             <br />
-            description:<asp:TextBox Text='<%# Bind("description") %>' runat="server" ID="descriptionTextBox" />
-            <br />status:
-            <asp:DropDownList ID="statusTextBox" runat="server"
-                DataValueField='id' DataSourceID="MediaEditDataSource" 
-                DataTextField="Status" 
-                SelectedValue='<%# Eval("status") %>' />
-            <asp:DropDownList ID="statusTextBox1" runat="server" OnPreRender="DropDownListStatus_Load" ></asp:DropDownList>
-            <%-- <asp:TextBox Text='<%# Bind("status") %>' runat="server" ID="statusTextBox" /> --%>
+            description:<asp:TextBox Text='<%# Bind("description") %>' runat="server" ID="TextBox3" />
+            <br />
+            status:<asp:DropDownList ID="statusTextBox" runat="server" DataValueField='id' DataSourceID="ComboDataSourceStatus" 
+                DataTextField="status" SelectedValue='<%# Bind("status") %>' />
             <br />
             completed:<asp:TextBox Text='<%# Bind("completed") %>' runat="server" ID="completedTextBox" />
             <br />
@@ -149,13 +166,15 @@
             <br />
             quantity:<asp:TextBox Text='<%# Bind("quantity") %>' runat="server" ID="quantityTextBox" />
             <br />
-            registered_date:<asp:TextBox Text='<%# Bind("registered_date") %>' runat="server" ID="registered_dateTextBox" />
+            registered_date:<asp:TextBox TextMode="Date" Text='<%# Bind("registered_date", "{0:yyyy-MM-dd}") %>' runat="server" ID="TextBox1" />
             <br />
-            registered_by:<asp:TextBox Text='<%# Bind("registered_by") %>' runat="server" ID="registered_byTextBox" />
+            registered_by:<asp:DropDownList ID="DropDownListRegistered" runat="server" DataValueField='Id' DataSourceID="ComboDataSourceUser" 
+                DataTextField="Username" SelectedValue='<%# Bind("registered_by") %>' />
             <br />
-            updated_date:<asp:TextBox Text='<%# Bind("updated_date") %>' runat="server" ID="updated_dateTextBox" />
+            updated_date:<asp:TextBox TextMode="Date" Text='<%# Bind("updated_date", "{0:yyyy-MM-dd}") %>' runat="server" ID="TextBox2" />
             <br />
-            updated_by:<asp:TextBox Text='<%# Bind("updated_by") %>' runat="server" ID="updated_byTextBox" />
+            updated_by:<asp:DropDownList ID="DropDownListUpdated" runat="server" DataValueField='Id' DataSourceID="ComboDataSourceUser" 
+                DataTextField="Username" SelectedValue='<%# Bind("updated_by") %>' />          
             <br />
             <asp:LinkButton runat="server" Text="Insert" CommandName="Insert" ID="InsertButton" CausesValidation="True" />&nbsp;
             <asp:LinkButton runat="server" Text="Cancel" CommandName="Cancel" ID="InsertCancelButton" OnClick="UpdateCancelButton_Click" CausesValidation="False" />
@@ -177,17 +196,17 @@
             <br />
             publisher:<asp:Label Text='<%# Bind("publisher") %>' runat="server" ID="publisherLabel" />
             <br />
-            release_date:<asp:Label Text='<%# Bind("release_date") %>' runat="server" ID="release_dateLabel" />
+            release_date:<asp:Label Text='<%# Bind("release_date", "{0:yyyy-MM-dd}") %>' runat="server" ID="release_dateLabel" />
             <br />
             info_url:<asp:Label Text='<%# Bind("info_url") %>' runat="server" ID="info_urlLabel" />
             <br />
             quantity:<asp:Label Text='<%# Bind("quantity") %>' runat="server" ID="quantityLabel" />
             <br />
-            registered_date:<asp:Label Text='<%# Bind("registered_date") %>' runat="server" ID="registered_dateLabel" />
+            registered_date:<asp:Label Text='<%# Bind("registered_date", "{0:yyyy-MM-dd}") %>' runat="server" ID="registered_dateLabel" />
             <br />
             registered_by:<asp:Label Text='<%# Bind("registered_by") %>' runat="server" ID="registered_byLabel" />
             <br />
-            updated_date:<asp:Label Text='<%# Bind("updated_date") %>' runat="server" ID="updated_dateLabel" />
+            updated_date:<asp:Label Text='<%# Bind("updated_date", "{0:yyyy-MM-dd}") %>' runat="server" ID="updated_dateLabel" />
             <br />
             updated_by:<asp:Label Text='<%# Bind("updated_by") %>' runat="server" ID="updated_byLabel" />
             <br />
