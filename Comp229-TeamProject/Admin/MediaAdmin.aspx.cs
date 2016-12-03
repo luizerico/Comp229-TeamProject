@@ -10,8 +10,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 /*
- * <author>Luiz Erico and Rister</author>
- * <date> 11-23-2016 </date>
+ * <author>Luiz Erico and Site Li(Rister)</author>
+ * <date> 11-30-2016 </date>
  * <summary>Login Page</summary>
  */
 namespace Comp229_TeamProject.Admin
@@ -95,31 +95,6 @@ namespace Comp229_TeamProject.Admin
                 myDropDown.DataBind();
                 //ErrorLabel.Text = reader.FieldCount.ToString() + "   " + myDropDown.Items.Count.ToString();
 
-                reader.Close();
-            }
-            catch (SqlException e)
-            {
-                ErrorLabel.Text = "Error loading list from database.<br />" + e.ToString();
-            }
-            finally
-            {
-                conn.Close();
-                
-            }
-        }
-
-        protected void DropDownListStatus_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                getStatus((DropDownList)sender, "SELECT * FROM STATUS", "Id", "STATUS");
-                ErrorLabel.Text = ((DataRowView)MediaFormView.DataSource)[1].ToString();
-                //((DropDownList)sender).SelectedValue = ((DataRowView)MediaFormView.DataSource)["status"].ToString();
-            }
-            catch(Exception eerro)
-            {
-                ErrorLabel.Text = "Error getting the DropDownList.<br />" + eerro.ToString();
-            }
         }
     }
 }
