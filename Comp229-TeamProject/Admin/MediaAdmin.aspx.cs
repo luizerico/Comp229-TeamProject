@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -26,7 +27,7 @@ namespace Comp229_TeamProject.Admin
         {
             MediaEditDataSource.SelectParameters["Id"].DefaultValue = MediaGridView.SelectedValue.ToString();
             MediaFormView.DataBind();
-            MediaGridView.Visible = false;
+            gridViewPanel.Visible = false;
 
             // Populate the DropDownList
             //getStatus((DropDownList)MediaFormView.FindControl("DropDownListStatus"));
@@ -38,12 +39,13 @@ namespace Comp229_TeamProject.Admin
         {
             MediaGridView.DataBind();
             MediaGridView.SetPageIndex(MediaGridView.PageCount);
-            MediaGridView.Visible = true;
+            gridViewPanel.Visible = true;
         }
 
         protected void MediaFormView_ItemDeleted(object sender, FormViewDeletedEventArgs e)
-        {
+        {            
             MediaGridView.DataBind();
+            gridViewPanel.Visible = true;
             MediaGridView.PagerSettings.Visible = true;
         }
 
@@ -57,13 +59,25 @@ namespace Comp229_TeamProject.Admin
         {
             MediaFormView.ChangeMode(FormViewMode.Insert);
             // getStatus((DropDownList)MediaFormView.FindControl("DropDownListStatus"));
-            MediaGridView.Visible = false;
+            gridViewPanel.Visible = false;
         }
 
         protected void UpdateCancelButton_Click(object sender, EventArgs e)
         {
-            MediaGridView.Visible = true;
+            gridViewPanel.Visible = true;
             MediaEditDataSource.SelectParameters["Id"].DefaultValue = "-1";
+        }
+
+        protected void uploadFile(object sender, EventArgs e)
+        { 
+            // Using FindControl and a Casting to get the fileupload values
+            FileUpload fl1 = ((FileUpload)MediaFormView.FindControl("coverImageFile"));
+            if (fl1.FileName != null && fl1.FileContent.Length > 0) { 
+                string folderPath = Server.MapPath("~/Resources/Uploads/");
+                fl1.SaveAs(folderPath + Path.GetFileName(fl1.FileName));
+                ((TextBox)MediaFormView.FindControl("cover_imageTextBox")).Text = fl1.FileName;
+            }
+
         }
 
         protected void getStatus(DropDownList myDropDown, String sqlCommand, String idField, String nameField)

@@ -13,21 +13,30 @@ namespace Comp229_TeamProject {
     public partial class WebForm3 {
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// UserEditDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource UserEditDataSource;
         
         /// <summary>
-        /// GridView1 control.
+        /// UserFormView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.FormView UserFormView;
+        
+        /// <summary>
+        /// simulateUploadButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button simulateUploadButton;
     }
 }

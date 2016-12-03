@@ -67,6 +67,24 @@ namespace Comp229_TeamProject.Admin {
         protected global::System.Web.UI.WebControls.SqlDataSource MediaEditDataSource;
         
         /// <summary>
+        /// gridViewPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel gridViewPanel;
+        
+        /// <summary>
+        /// NewItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton NewItem;
+        
+        /// <summary>
         /// MediaGridView control.
         /// </summary>
         /// <remarks>
@@ -85,12 +103,12 @@ namespace Comp229_TeamProject.Admin {
         protected global::System.Web.UI.WebControls.FormView MediaFormView;
         
         /// <summary>
-        /// NewItem control.
+        /// simulateUploadButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton NewItem;
+        protected global::System.Web.UI.WebControls.Button simulateUploadButton;
     }
 }
