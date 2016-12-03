@@ -34,9 +34,14 @@
         <asp:Repeater ID="FeaturedItemsList" runat="server" DataSourceID="FeaturedItems">
             <ItemTemplate>
                 <div class="col-md-6">
-                    <div class="jumbotron">
+                    <div class="featured_box">
                         <h3><%# Eval("name") %></h3>
-                        <p><%# Eval("description") %></p>
+                        <div class="featured_left">
+                            <asp:Image runat="server" ImageUrl='<%# "/Resources/Uploads/" + Eval("cover_image") %>' CssClass="listview_image" />
+                        </div>
+                        <div class="featured_right">
+                            <%# Eval("description") %>
+                        </div>
                         <p><a class="btn btn-primary " href="#" role="button">Learn more</a></p>
                     </div>
                 </div>

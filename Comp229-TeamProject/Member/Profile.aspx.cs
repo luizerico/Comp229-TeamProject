@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 /*
  * <author>Luiz Erico and Rister</author>
@@ -17,8 +18,11 @@ namespace Comp229_TeamProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // Since the authentication is not full implemented this has been used to get the username to show the profile
+            // Avoiding cookies...
+            usernameLabel.Text = User.Identity.Name.ToString();
         }
+
         protected void uploadFile(object sender, EventArgs e)
         {
             // Using FindControl and a Casting to get the fileupload values

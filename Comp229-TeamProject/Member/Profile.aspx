@@ -8,25 +8,19 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:SqlDataSource ID="UserEditDataSource" runat="server" ConnectionString='<%$ ConnectionStrings:ConnTeamProject %>' SelectCommand="SELECT * FROM [Users] WHERE [Id] = @Id" DeleteCommand="DELETE FROM [Users] WHERE [Id] = @Id"  UpdateCommand="UPDATE [Users] SET [Username] = @Username, [Password] = @Password, [Email] = @Email, [Birthdate] = @Birthdate, [Picture] = @Picture, [Registered_date] = @Registered_date WHERE [Id] = @Id">
-        <DeleteParameters>
-            <asp:Parameter Name="Id" Type="Int32"></asp:Parameter>
-        </DeleteParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="Username" Type="String"></asp:Parameter>
-            <asp:Parameter Name="Password" Type="String"></asp:Parameter>
-            <asp:Parameter Name="Email" Type="String"></asp:Parameter>
-            <asp:Parameter DbType="Date" Name="Birthdate"></asp:Parameter>
-            <asp:Parameter Name="Picture" Type="String"></asp:Parameter>
-            <asp:Parameter DbType="Date" Name="Registered_date"></asp:Parameter>
-            <asp:Parameter Name="Id" Type="Int32"></asp:Parameter>
-        </UpdateParameters>
-         <SelectParameters>
+    <asp:SqlDataSource ID="UserEditDataSource" runat="server" ConnectionString='<%$ ConnectionStrings:ConnTeamProject %>' SelectCommand="SELECT * FROM [Users] WHERE ([Username] = @Username2)">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="usernameLabel" PropertyName="Text" Name="Username2" Type="String"></asp:ControlParameter>
+
+        </SelectParameters>
+
+        <SelectParameters>
             <asp:Parameter Name="Id" Type="Int32" DefaultValue="1" />
         </SelectParameters>
     </asp:SqlDataSource>
 
 
+    <asp:Label runat="server" Text="" ID="usernameLabel" CssClass="invisible_button"/>
 
     <asp:FormView ID="UserFormView" runat="server" DataSourceID="UserEditDataSource" RowStyle-CssClass="row" InsertRowStyle-CssClass="row" DataKeyNames="Id">
         <EditItemTemplate>

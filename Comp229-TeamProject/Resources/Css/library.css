@@ -28,3 +28,22 @@ div.form-group {
 .listview_image {
     max-width: 200px;
 }
+
+
+
+.featured_right {
+    font-size: 1em;    
+    max-height: 300px;
+    overflow: auto;
+    padding: 5px;
+   
+}
+
+div.featured_left {   
+    width: 200px;
+     float: left;
+    font-size: 1em; 
+    padding: 5px;
+    display:block;
+    overflow:hidden;
+}
