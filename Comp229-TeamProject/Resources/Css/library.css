@@ -102,7 +102,7 @@ div.featured_left {
 .featured_title {
     /* background-color: #ccc; */
     padding: 5px;
-    border-bottom: 2px solid #666;
+    border-bottom: 2px solid #999;
     /* border-radius: 5px; */
     margin: 4px 5px;
     font-weight: 600;
@@ -110,7 +110,24 @@ div.featured_left {
 
 .last_title {
     padding: 5px;
-    border-bottom: 2px solid #666;
+    border-bottom: 2px solid #999;
     margin: 20px 5px 5px 5px;
     font-weight: 600;
 }
+
+.last_item_info .featured_title_box {
+    text-align: left;
+}
+
+.list_view_box {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+}
+
+.list_view_buttons {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+

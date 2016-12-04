@@ -85,7 +85,7 @@
                             <div class="featured_title_box">
                                 <h3 class="home_title_featured"><%# Eval("name") %></h3>
                                 <asp:Label runat="server" Text= '<%# "publisher: "  + Eval("publisher") %>'  CssClass="home_info" />
-                                <asp:Label runat="server" Text='<%# "released on " + Eval("release_date", "{0:yyyy-MM-dd}") %>' CssClass="home_info" />
+                                <asp:Label runat="server" Text='<%# "released on " + Eval("release_date", "{0:MMM dd, yyyy}") %>' CssClass="home_info" />
                             </div>
                             <%# Eval("description") %>
                         </div>                        
@@ -109,7 +109,7 @@
                             <h3 class="home_title_featured"><%# Eval("name") %></h3>
                             <asp:Image runat="server" ImageUrl='<%# "/Resources/Uploads/" + Eval("cover_image") %>' CssClass="home_image" />   
                         </div>
-                        <div class="las_item_info">
+                        <div class="last_item_info">
                             <div class="featured_title_box">
                                 <asp:Label runat="server" Text= '<%# "publisher: "  + Eval("publisher") %>'  CssClass="home_info" />
                                 <asp:Label runat="server" Text='<%# "released on " + Eval("release_date", "{0:yyyy-MM-dd}") %>' CssClass="home_info" />

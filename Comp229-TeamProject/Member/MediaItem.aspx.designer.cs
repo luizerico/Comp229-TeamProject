@@ -10,33 +10,42 @@
 namespace Comp229_TeamProject {
     
     
-    public partial class WebForm4 {
+    public partial class MediaItem {
         
         /// <summary>
-        /// ErrorLabel control.
+        /// ItemMediaDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ErrorLabel;
+        protected global::System.Web.UI.WebControls.SqlDataSource ItemMediaDataSource;
         
         /// <summary>
-        /// MediaListDataSource control.
+        /// Repeater1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource MediaListDataSource;
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
         
         /// <summary>
-        /// ListViewPanel control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel ListViewPanel;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        
+        /// <summary>
+        /// Repeater2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Repeater2;
     }
 }
