@@ -14,7 +14,7 @@
             <asp:Parameter Name="Email" Type="String"></asp:Parameter>
             <asp:Parameter DbType="Date" Name="Birthdate"></asp:Parameter>
             <asp:Parameter Name="Picture" Type="String"></asp:Parameter>
-            <asp:Parameter DbType="Date" Name="Registered_date"></asp:Parameter>
+            <asp:Parameter DbType="Date" Name="Registered_date"></asp:Parameter> 
         </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="Username" Type="String"></asp:Parameter>
