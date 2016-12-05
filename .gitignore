@@ -242,4 +242,4 @@ ModelManifest.xml
 .fake/
 
 # Ignore web.config to avoid share database password.
-Web.config
+# Web.config
