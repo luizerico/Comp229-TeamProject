@@ -13,5 +13,11 @@ namespace Comp229_TeamProject
         {
 
         }
+
+        protected void onInsertComment(object sender, EventArgs e)
+        {
+            DateTime myDateTime = DateTime.Now;
+            ReviewGridDataSource.InsertParameters.Add("Registered_date", myDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+        }
     }
 }

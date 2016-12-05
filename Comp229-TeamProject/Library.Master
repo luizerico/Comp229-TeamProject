@@ -43,8 +43,11 @@
                         <%-- Todo: Implementar codigo para gerar menu baseado nas roles. --%>
                         <asp:LoginView ID="AnonymousView" runat="server">
                             <AnonymousTemplate>
+                                <li runat="server" id="register">
+                                    <asp:HyperLink ID="linkregister" runat="server" NavigateUrl="~/Register.aspx">Register</asp:HyperLink>
+                                </li>
                                 <li id="login" runat="server">
-                                    <asp:HyperLink ID="LoginPage" runat="server" NavigateUrl="~/Login.aspx">Anonymous User - Login</asp:HyperLink>
+                                    <asp:HyperLink ID="LoginPage" runat="server" NavigateUrl="~/Login.aspx">Login</asp:HyperLink>
                                 </li>
                             </AnonymousTemplate>
                         </asp:LoginView>

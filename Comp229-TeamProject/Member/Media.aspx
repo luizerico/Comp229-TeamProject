@@ -75,14 +75,19 @@
                         <td runat="server" id="itemPlaceholder"></td>
                     </div>
 
-                <div style="">
-                    <asp:DataPager runat="server" ID="DataPager1" PageSize="5">
+                <div style="text-align:center;">
+                    <div class="form-group">
+                    <asp:DataPager runat="server" ID="DataPager2">
                         <Fields>
-                            <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False"></asp:NextPreviousPagerField>
+                            
+                            <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" ButtonCssClass="btn btn-primary"></asp:NextPreviousPagerField>
                             <asp:NumericPagerField></asp:NumericPagerField>
-                            <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False"></asp:NextPreviousPagerField>
+                            <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" ButtonCssClass="btn btn-primary"></asp:NextPreviousPagerField>
+                                
                         </Fields>
-                    </asp:DataPager>
+                   
+                     </asp:DataPager>
+                        </div>
                 </div>
             </LayoutTemplate>
         </asp:ListView>

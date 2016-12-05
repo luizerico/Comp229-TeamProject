@@ -50,6 +50,7 @@ namespace Comp229_TeamProject
             conn = new SqlConnection(connectionString);
 
             string lookupPassword = null;
+            int userid = -1;
 
             if ((username == null) || (username.Length == 0)) { 
                 System.Diagnostics.Trace.WriteLine("[ValidateUser] Invalid Username or Password.");
@@ -67,13 +68,23 @@ namespace Comp229_TeamProject
             try
             {
                 conn.Open();
-                comm = new SqlCommand("Select Password from users where Username=@userName", conn);
+                comm = new SqlCommand("Select Id, Password from users where Username=@userName", conn);
                 comm.Parameters.Add("@userName", SqlDbType.VarChar, 25).Value = username;
                 System.Diagnostics.Trace.WriteLine("[ValidateUser] Error checking the database. " + comm.CommandText.ToString());
                 comm.ExecuteNonQuery();
 
-                lookupPassword = (string)comm.ExecuteScalar();
+                SqlDataReader reader =comm.ExecuteReader();
+                while (reader.Read())
+                {
+                    userid  = reader.GetInt32(0);
+                    lookupPassword = reader.GetString(1);
+                }
 
+                //lookupPassword = (string)reader.GetString(0);
+                //Console.WriteLine((string)reader.GetString(0));
+                //lookupPassword = (string)comm.ExecuteScalar();
+                Console.WriteLine("sfasdfasdfasdfasdfasdfasdfasdfads\n");
+                reader.Close();
                 comm.Dispose();
                 conn.Dispose();
             }
@@ -85,8 +96,8 @@ namespace Comp229_TeamProject
             {
                 conn.Close();
             }
-            
-            
+
+            Session["userid"] = userid;
             return (string.Compare(lookupPassword, password, false) == 0);
 
         }

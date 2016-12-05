@@ -97,6 +97,7 @@
     <Content Include="Admin\UserAdmin.aspx" />
     <Content Include="Admin\MediaAdmin.aspx" />
     <Content Include="Member\MediaItem.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="Resources\Css\library.css" />
     <Content Include="Resources\Images\big_logo.png" />
     <Content Include="Resources\Images\favicon.ico" />
@@ -215,6 +216,13 @@
     </Compile>
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

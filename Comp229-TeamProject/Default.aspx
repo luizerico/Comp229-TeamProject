@@ -91,7 +91,7 @@
                         </div>                        
                     </div>
                     <div class="featured_buttons">
-                        <a class="btn btn-primary " href="#" role="button">Read More</a>
+                        <a class="btn btn-primary " href="/Member/MediaItem.aspx?itemid=<%# Eval("Id") %>" role="button">Read More</a>
                     </div>
                 </div>
             </ItemTemplate>
@@ -117,7 +117,7 @@
                                 <asp:Label runat="server" Text='<%# "Status: " + Eval("status_name") %>' CssClass="home_info" />
                             </div>
                             <div class="featured_buttons">
-                        <a class="btn btn-primary " href="#" role="button">Read More</a>
+                        <a class="btn btn-primary " href="/Member/MediaItem.aspx?itemid=<%# Eval("Id") %>" role="button">Read More</a>
                     </div>
                         </div>                        
                     </div>

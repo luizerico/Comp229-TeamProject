@@ -8,9 +8,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:SqlDataSource ID="UserEditDataSource" runat="server" ConnectionString='<%$ ConnectionStrings:ConnTeamProject %>' SelectCommand="SELECT * FROM [Users] WHERE ([Username] = @Username2)">
+    <asp:SqlDataSource ID="UserEditDataSource" runat="server" ConnectionString='<%$ ConnectionStrings:ConnTeamProject %>'
+        SelectCommand="SELECT * FROM [Users] WHERE ([Id] = @UserId)">
         <SelectParameters>
-            <asp:ControlParameter ControlID="usernameLabel" PropertyName="Text" Name="Username2" Type="String"></asp:ControlParameter>
+            <%-- <asp:ControlParameter ControlID="usernameLabel" PropertyName="Text" Name="Username2" Type="String"></asp:ControlParameter> --%>
+            <asp:SessionParameter SessionField="userid" Name="UserId" Type="Int32" DefaultValue="-1" />
 
         </SelectParameters>
 
@@ -20,7 +22,7 @@
     </asp:SqlDataSource>
 
 
-    <asp:Label runat="server" Text="" ID="usernameLabel" CssClass="invisible_button"/>
+
 
     <asp:FormView ID="UserFormView" runat="server" DataSourceID="UserEditDataSource" RowStyle-CssClass="row" InsertRowStyle-CssClass="row" DataKeyNames="Id">
         <EditItemTemplate>

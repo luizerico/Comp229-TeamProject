@@ -10,33 +10,24 @@
 namespace Comp229_TeamProject {
     
     
-    public partial class WebForm3 {
+    public partial class Register {
         
         /// <summary>
-        /// UserEditDataSource control.
+        /// UserDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource UserEditDataSource;
+        protected global::System.Web.UI.WebControls.SqlDataSource UserDataSource;
         
         /// <summary>
-        /// UserFormView control.
+        /// UserFormEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView UserFormView;
-        
-        /// <summary>
-        /// simulateUploadButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button simulateUploadButton;
+        protected global::System.Web.UI.WebControls.FormView UserFormEdit;
     }
 }

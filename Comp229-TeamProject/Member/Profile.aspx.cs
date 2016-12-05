@@ -20,7 +20,7 @@ namespace Comp229_TeamProject
         {
             // Since the authentication is not full implemented this has been used to get the username to show the profile
             // Avoiding cookies...
-            usernameLabel.Text = User.Identity.Name.ToString();
+            // usernameLabel.Text = (Session["userid"]).ToString();
         }
 
         protected void uploadFile(object sender, EventArgs e)
